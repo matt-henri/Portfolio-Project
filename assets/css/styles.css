@@ -454,16 +454,6 @@ img {
   width: 220px;
 }
 
-/* .about__shadow {
-  width: 100%;
-  height: 258px;
-  position: absolute;
-  bottom: 1rem;
-  z-index: 1;
-  background: linear-gradient(180deg,
-              hsla(240, 100%, 2%, 0) 60%,
-              var(--body-color) 95%);;
-} */
 
 /*=============== PROJECTS ===============*/
 
@@ -881,6 +871,53 @@ img {
   .work__tabs{
     padding-inline: 1rem;
   }
+
+  .about__data {
+    text-align: center;
+  }
+
+  .button {
+    display: inline-block;
+  }
+}
+
+
+@media screen and (min-width: 390px) {
+  .container{
+    margin-inline: 1rem;
+  }
+
+  .blob,
+  .home__image .blob-animate{
+    width: 220px;
+    height: 220px;
+  }
+
+  .home__social{
+    bottom: 3rem;
+    row-gap: 1.5rem;
+  }
+
+  .projects__card {
+    padding-inline: 1rem;
+  }
+
+  .work__tabs{
+    padding-inline: 1rem;
+  }
+
+  .about__data {
+    text-align: center;
+  }
+
+  .about__data .section__title,
+  .projects .section__title {
+    text-align: center;
+  }
+
+  .button {
+    display: inline-block;
+  }
 }
 
 /* For medium devices */
@@ -1090,11 +1127,6 @@ img {
   .about__image .blob-animate:nth-child(2) {
     right: -1rem;
     bottom: 3rem;
-  }
-
-  .about__shadow {
-    height: 600px;
-    bottom: 0;
   }
 
   .projects {
