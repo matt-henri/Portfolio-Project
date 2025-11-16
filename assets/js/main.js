@@ -1,3 +1,6 @@
+/*=============== SUPPRESS SCROLLREVEAL WARNING ===============*/
+window.console.warn = () => {};
+
 /*=============== HOME SPLIT TEXT ===============*/
 const { animate, splitText, stagger } = anime;
 
@@ -121,3 +124,63 @@ sr.reveal('.home__social, .home__cv', {delay: 1500})
 sr.reveal('.about__data', {origin: 'left'})
 sr.reveal('.about__image', {origin: 'right'})
 sr.reveal('.services__card', {interval: 100})
+sr.reveal('.certificates__card', {interval: 100})
+
+/*=============== CERTIFICATES MODAL ===============*/
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('certificatesModal');
+  
+  // Verificar se o modal existe antes de continuar
+  if (!modal) return;
+
+  const modalImage = document.getElementById('modalImage');
+  const closeButton = document.querySelector('.certificates__modal-close');
+  const certificateButtons = document.querySelectorAll('.certificates__button');
+  const certificateImages = document.querySelectorAll('.certificates__img');
+
+  // Abrir modal ao clicar no botão de ampliar
+  certificateButtons.forEach((button, index) => {
+    button.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const imageSrc = certificateImages[index].getAttribute('data-full');
+      modalImage.src = imageSrc;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Abrir modal ao clicar direto na imagem
+  certificateImages.forEach((img) => {
+    img.addEventListener('click', function() {
+      const imageSrc = this.getAttribute('data-full');
+      modalImage.src = imageSrc;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Função para fechar modal
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Fechar modal ao clicar no botão close
+  if (closeButton) {
+    closeButton.addEventListener('click', closeModal);
+  }
+
+  // Fechar modal ao clicar fora da imagem
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Fechar modal com tecla ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+});
