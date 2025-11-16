@@ -396,6 +396,7 @@ img {
   align-items: center;
   column-gap: .5rem;
   transition: box-shadow .4s;
+  margin: 3rem;
 }
 
 .button i {
@@ -1056,6 +1057,7 @@ img {
     padding-top: 2rem;
   }
 
+
   .about__data,
   .about__data .section__title {
     text-align: center;
@@ -1063,7 +1065,7 @@ img {
   }
 
   .about__description {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
   }
 
   .about__perfil {
