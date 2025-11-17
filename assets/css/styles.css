@@ -285,7 +285,7 @@ img {
   justify-self: center;
 }
 
-.home__shadow, .home__info, .home__social, .home__cv {
+.home__shadow, .home__info, .home__social{
   position: absolute;
 }
 
@@ -358,29 +358,6 @@ img {
   color: var(--first-color);
   transform: translateX(.25rem);
 }
-
-.home__cv {
-  z-index: 2;
-  right: -2.5rem;
-  bottom: 2.5rem;
-  rotate: -90deg;
-  color: var(--text-color-light);
-  font: var(--font-medium) var(--small-font-size) var(--second-font);
-  display: flex;
-  align-items: center;
-  column-gap: .5rem;
-  transition: color .4s;
-}
-
-.home__cv i{
-  font-size: 1rem;
-}
-
-.home__cv:hover{
-  color: var(--first-color);
-}
-
-
 
 /*=============== BUTTON ===============*/
 .button {
@@ -1315,12 +1292,6 @@ img {
 
   .home__social-link {
     font-size: 1.5rem;
-  }
-
-  .home__cv {
-    font-size: var(--normal-font-size);
-    rotate: 0deg;
-    right: 0;
   }
 
   .about__container {
